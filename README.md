@@ -1,4 +1,4 @@
 # elasticsearch-exporter
 
-- From https://github.com/forselli-stratio/elasticsearch-exporter/tree/master
+- From https://github.com/justwatchcom/elasticsearch_exporter
 - kms_utils added and ready to deploy in DC/OS
