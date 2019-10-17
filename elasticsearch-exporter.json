@@ -33,7 +33,7 @@
       "privileged": false,
       "portMappings": [
         {
-          "containerPort": 9108,
+          "containerPort": 9114,
           "protocol": "tcp",
           "name": "metrics",
           "servicePort": 0
