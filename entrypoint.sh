@@ -88,4 +88,4 @@ export CA_REST=$(/usr/bin/curl -s -f -k -L -XGET -H "X-Vault-Token:$VAULT_TOKEN"
 export CA=$(echo $MARATHON_REST jq -cMSr .data[])
 echo $CA | sed -e 's/-----BEGIN CERTIFICATE-----/-----BEGIN CERTIFICATE-----\n/g' -e 's/-----END CERTIFICATE-----/\n-----END CERTIFICATE-----/g' -e 's/-----END CERTIFICATE----------BEGIN CERTIFICATE-----/-----END CERTIFICATE-----\n-----BEGIN CERTIFICATE-----/g'> /certs/ca.crt
 
-/bin/elasticsearch_exporter -es.all -es.indices -es.indices_settings -es.ssl-skip-verify -es.ca /certs/ca.crt -es.client-cert /certs/elasticsearch.pem -es.client-private-key /certs/elasticsearch.key -es.uri "${ELASTIC_HOST}"
+/bin/elasticsearch_exporter --es.all --es.indices --es.indices_settings --es.ssl-skip-verify --es.ca /certs/ca.crt --es.client-cert /certs/elasticsearch.pem --es.client-private-key /certs/elasticsearch.key --es.uri "${ELASTIC_HOST}"
